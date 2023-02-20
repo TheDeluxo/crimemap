@@ -3,21 +3,18 @@ import dbconfig
 
 class DBHelper:
     def connect(self, database="crimemap"):
-        return pymysql.connect(host='localhost',
-                               user='root',
-                               passwd='Orange31',
-                               db=database)
-
+        return pymysql.connect(host='localhost',user='root',passwd='Orange31',db=database)
+    
     def get_all_inputs(self):
-    	connection = self.connect()
-    	try:
-        	query = "SELECT description FROM crimes;"
-        	with connection.cursor() as cursor:
-        		cursor.execute(query)
-        		return cursor.fetchall()
-    	finally:
-        	connection.close()
-
+        connection = self.connect()
+        try:
+            query = "SELECT description FROM crimes;"
+            with connection.cursor() as cursor:
+                cursor.execute(query)
+                return cursor.fetchall()
+        finally:
+            connection.close()
+    
     def add_input(self, data):
         connection = self.connect()
         try:
@@ -26,8 +23,8 @@ class DBHelper:
             with connection.cursor() as cursor:
                 cursor.execute(query)
                 connection.commit()
-	finally:
-		connection.close()
+        finally:
+            connection.close()
 
     def clear_all(self):
         connection = self.connect()
@@ -37,4 +34,4 @@ class DBHelper:
                 cursor.execute(query)
                 connection.commit()
         finally:
-            connection.close()
+            connection.close()  
