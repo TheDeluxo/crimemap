@@ -1,4 +1,4 @@
-class MockDBHelper:
+class DBHelper:
     def connect(self, database="crimemap"):
         pass
     def get_all_inputs(self):
@@ -7,3 +7,4 @@ class MockDBHelper:
         pass
     def clear_all(self):
         pass
+
