@@ -20,10 +20,11 @@
             }
                 var map = new google.maps.Map(document.getElementById('map'), options);
 
-                google.maps.event.addListener(map, 'click', function(event){placeMarker(event.latLng);
-            
-                var marker = new google.maps.Marker({position: { lat: 33.933241, lng: -84.340288 }, map: map,
+                google.maps.event.addListener(map, 'click', function(event){ placeMarker(event.latLng);
                 });
+                var marker = new google.maps.Marker({position: { lat: 33.933241, lng: -84.340288 }, 
+                map: map,
+                
               }
             </script>
             <script defer
